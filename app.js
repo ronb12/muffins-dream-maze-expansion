@@ -2049,6 +2049,18 @@ storyModalEl?.addEventListener("click", (event) => {
   if (event.target === storyModalEl) closeStoryModal();
 });
 
+function hubRefreshTick() {
+  if (isPlayPage) return;
+  updateHud();
+  renderStoryPanel();
+  if (document.body.dataset.page === "console" && minimapCtx) {
+    drawMinimap();
+  }
+  if (document.body.dataset.page === "worlds" && window.GamePlus?.renderWorldGrid) {
+    window.GamePlus.renderWorldGrid();
+  }
+}
+
 function bootMuffinGame() {
   setupWorld(state.levelIndex);
   if (isPlayPage) {
@@ -2056,15 +2068,11 @@ function bootMuffinGame() {
     animationId = requestAnimationFrame((time) => gameLoop(time));
     return;
   }
-  updateHud();
-  renderStoryPanel();
-  if (minimapCtx) drawMinimap();
+  hubRefreshTick();
   if (document.body.dataset.page === "store") {
     openStore();
   }
-  if (document.body.dataset.page === "worlds" && window.GamePlus?.renderWorldGrid) {
-    window.GamePlus.renderWorldGrid();
-  }
+  window.setInterval(hubRefreshTick, 800);
 }
 
 bootMuffinGame();
