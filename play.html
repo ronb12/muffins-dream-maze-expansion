@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,maximum-scale=1,user-scalable=no">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="theme-color" content="#140b27">
+    <title>Play — Muffin's Maze Adventure</title>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ctext y='50' font-size='46'%3E%F0%9F%8C%99%3C/text%3E%3C/svg%3E">
+    <link rel="stylesheet" href="./styles.css">
+    <link rel="manifest" href="./manifest.json">
+  </head>
+  <body data-page="play" class="play-focus">
+    <main class="experience-shell">
+      <nav class="mobile-quick-bar" aria-label="Mobile quick actions">
+        <a class="primary" href="./play.html">Play</a>
+        <a class="ghost" href="./console.html">Console</a>
+        <button type="button" id="mobileHintBtn" class="secondary">Hint</button>
+      </nav>
+
+      <section id="worldStage" class="world-stage glass">
+        <div class="scene-banner">
+          <div>
+            <p class="eyebrow">First-Person Dream Run</p>
+            <h2 class="scene-title">Walk inside the maze</h2>
+          </div>
+          <p class="scene-copy">Collect badge stars, charge the gate, and escape.</p>
+        </div>
+
+        <div id="viewportShell" class="viewport-shell">
+          <canvas id="view" width="1280" height="720" aria-label="3D dream world"></canvas>
+          <div id="introBanner" class="intro-banner hidden">
+            <p class="eyebrow">World Loaded</p>
+            <strong id="introTitle">Moon Garden</strong>
+            <span id="introSubtitle">Collect stars, charge the gate, and escape.</span>
+          </div>
+          <div class="hud-strip">
+            <span id="worldChip">Moon Garden</span>
+            <span id="objectiveChip">Find all stars</span>
+          </div>
+          <div class="scene-readout">
+            <span id="depthChip">Depth 14m</span>
+            <span id="bestChip">Best --:--</span>
+          </div>
+          <div class="door-charge">
+            <div class="meter-meta">
+              <span>Gate Charge</span>
+              <span id="doorChargeLabel">0%</span>
+            </div>
+            <div class="meter-track">
+              <div id="doorChargeFill" class="meter-fill door-fill"></div>
+            </div>
+          </div>
+          <div class="drag-tip" id="dragTip">Drag to steer Muffin's view</div>
+          <button type="button" id="fullscreenBtn" class="fullscreen-btn ghost">Fullscreen</button>
+          <div class="viewport-controls" aria-label="Touch movement controls">
+            <p class="look-hint">Drag here to look</p>
+            <div id="lookZone" class="look-zone" aria-hidden="true"></div>
+            <div class="move-cluster">
+              <button type="button" class="control-btn" data-control="forward" aria-label="Forward">▲</button>
+              <div class="move-row">
+                <button type="button" class="control-btn" data-control="left" aria-label="Left">◀</button>
+                <button type="button" class="control-btn" data-control="backward" aria-label="Back">▼</button>
+                <button type="button" class="control-btn" data-control="right" aria-label="Right">▶</button>
+              </div>
+            </div>
+            <div class="strafe-cluster">
+              <button type="button" class="control-btn wide" data-control="strafe-left" aria-label="Strafe left">◖</button>
+              <button type="button" class="control-btn wide" data-control="strafe-right" aria-label="Strafe right">◗</button>
+            </div>
+            <button type="button" class="control-btn sprint-btn" data-control="sprint" aria-label="Rush">Rush</button>
+          </div>
+          <div id="toastFeed" class="toast-feed" aria-live="polite"></div>
+        </div>
+
+        <div class="touch-pad" aria-label="Movement pad">
+          <div class="touch-group">
+            <button type="button" data-control="forward">Forward</button>
+            <div class="touch-row">
+              <button type="button" data-control="left">Turn Left</button>
+              <button type="button" data-control="backward">Back</button>
+              <button type="button" data-control="right">Turn Right</button>
+            </div>
+          </div>
+          <div class="touch-group touch-row">
+            <button type="button" data-control="strafe-left">Drift Left</button>
+            <button type="button" data-control="sprint">Rush</button>
+            <button type="button" data-control="strafe-right">Drift Right</button>
+          </div>
+        </div>
+
+        <p id="message" class="message" style="margin-top:12px">Gather every badge star, then reach the glowing door.</p>
+      </section>
+    </main>
+
+    <div id="levelModal" class="level-modal hidden" aria-hidden="true">
+      <div class="modal-card">
+        <p class="eyebrow">Dream cleared</p>
+        <h2 id="modalTitle">Moon Garden Complete</h2>
+        <p id="modalSummary" class="modal-copy">Muffin gathered every star and opened the next dream door.</p>
+        <div class="modal-stats">
+          <div><span>Time</span><strong id="modalTime">00:00</strong></div>
+          <div><span>Moves</span><strong id="modalMoves">0</strong></div>
+          <div><span>Bonus</span><strong id="modalBonus">+0</strong></div>
+          <div><span>Score</span><strong id="modalScore">0</strong></div>
+          <div><span>Rank</span><strong id="modalRank">B</strong></div>
+        </div>
+        <div class="modal-actions">
+          <button type="button" id="modalShareBtn" class="secondary">Share Result</button>
+          <button id="continueBtn" class="primary">Enter Next Dream</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="tutorialOverlay" class="tutorial-overlay hidden" aria-hidden="true">
+      <div class="tutorial-card glass">
+        <p class="eyebrow">First Dream</p>
+        <h2>How to play</h2>
+        <div id="tutorialStep" class="tutorial-step"></div>
+        <div class="tutorial-actions">
+          <button type="button" id="tutorialSkipBtn" class="ghost">Skip</button>
+          <button type="button" id="tutorialNextBtn" class="primary">Next</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="storeModal" class="level-modal hidden" aria-hidden="true"></div>
+    <div id="storyModal" class="level-modal hidden" aria-hidden="true"></div>
+    <div id="worldPickerModal" class="level-modal hidden" aria-hidden="true"></div>
+
+    <script src="./js/site-nav.js"></script>
+    <script src="./js/audio-manager.js"></script>
+    <script src="./js/garageband-api-client.js"></script>
+    <script src="./app.js"></script>
+    <script src="./js/game-plus.js"></script>
+  </body>
+</html>

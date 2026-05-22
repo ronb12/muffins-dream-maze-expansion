@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+    <meta name="theme-color" content="#140b27">
+    <title>Settings — Muffin's Maze Adventure</title>
+    <link rel="stylesheet" href="./styles.css">
+  </head>
+  <body data-page="settings">
+    <main class="experience-shell">
+      <section class="page-panel glass side-panel" style="max-width:560px;margin:0 auto">
+        <p class="eyebrow">Settings</p>
+        <h2>Dream Controls</h2>
+        <label class="settings-row">
+          <span>Look sensitivity <strong id="lookSensitivityValue">1.0×</strong></span>
+          <input id="lookSensitivity" type="range" min="0.6" max="2" step="0.1" value="1">
+        </label>
+        <div class="settings-actions">
+          <button type="button" id="exportSaveBtn" class="secondary">Copy Save Code</button>
+          <button type="button" id="importSaveBtn" class="ghost">Import Save</button>
+          <input id="importSaveInput" type="file" accept="application/json,.json" hidden>
+          <button type="button" id="resetBtn" class="ghost">Reset Journey</button>
+        </div>
+        <div class="panel-block settings-music-api">
+          <h2>Music</h2>
+          <button id="musicBtn" class="primary panel-button">Start Music</button>
+        </div>
+        <div class="panel-block settings-music-api">
+          <div class="mini-header">
+            <h2>GarageBand API</h2>
+            <span id="gbApiStatus" class="tiny-note">Checking…</span>
+          </div>
+          <label class="settings-row">
+            <span>Track recipe</span>
+            <select id="gbRecipeSelect"></select>
+          </label>
+          <div class="settings-actions">
+            <button type="button" id="gbComposeBtn" class="secondary">Compose in GarageBand</button>
+            <button type="button" id="gbExportBtn" class="ghost">Export MP3</button>
+          </div>
+        </div>
+        <a class="ghost panel-button" href="./play.html" style="display:block;text-align:center;text-decoration:none">Back to Play</a>
+      </section>
+    </main>
+    <script src="./js/site-nav.js"></script>
+    <script src="./js/app-stubs.js"></script>
+    <script src="./js/audio-manager.js"></script>
+    <script src="./js/garageband-api-client.js"></script>
+    <script src="./app.js"></script>
+    <script src="./js/game-plus.js"></script>
+  </body>
+</html>

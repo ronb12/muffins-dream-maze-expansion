@@ -1,0 +1,21 @@
+{
+  "id": "music-garden",
+  "title": "Moon Garden Loop",
+  "bpm": 84,
+  "bars": 16,
+  "mood": "purple moon garden",
+  "outputFilename": "music-garden.mp3",
+  "garageBandHints": {
+    "tempo": 84,
+    "suggestedInstruments": [
+      "Dreamy Pad",
+      "Bell",
+      "Soft Piano",
+      "Electric Bass"
+    ],
+    "program": 88
+  },
+  "midiPath": "/Volumes/My Passport for Mac/Macintosh-SSD-Offload/Documents-Codex/2026-05-09/i-have-my-google-sheet-open/prototypes-today/muffins-dream-maze-expansion/audio/staging/music-garden.mid",
+  "midiRelative": "audio/staging/music-garden.mid",
+  "noteCount": 272
+}

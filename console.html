@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+    <meta name="theme-color" content="#140b27">
+    <title>Console — Muffin's Maze Adventure</title>
+    <link rel="stylesheet" href="./styles.css">
+  </head>
+  <body data-page="console">
+    <main class="experience-shell">
+      <section class="page-panel glass side-panel" style="max-width:760px;margin:0 auto">
+        <div class="menu-banner">
+          <p class="eyebrow">Dream Runner</p>
+          <h2>Dream Runner Console</h2>
+          <p class="menu-banner-copy">Live stats for your current maze. Open <a href="./play.html">Play</a> to move Muffin.</p>
+        </div>
+        <div class="stat-grid">
+          <div class="stat-card"><span>World</span><strong id="worldLabel">—</strong></div>
+          <div class="stat-card"><span>Level</span><strong id="levelLabel">1</strong></div>
+          <div class="stat-card"><span>Dream Coins</span><strong id="coinsLabel">0</strong></div>
+          <div class="stat-card"><span>Badges</span><strong id="badgesLabel">0/0</strong></div>
+          <div class="stat-card"><span>Moves</span><strong id="movesLabel">0</strong></div>
+          <div class="stat-card"><span>Time</span><strong id="timerLabel">00:00</strong></div>
+          <div class="stat-card"><span>Score</span><strong id="scoreLabel">0</strong></div>
+          <div class="stat-card"><span>Rush</span><strong id="rushLabel">100%</strong></div>
+        </div>
+        <div class="meter-card">
+          <div class="meter-meta"><span>Rush Charge</span><span id="rushMeta">Ready</span></div>
+          <div class="meter-track"><div id="rushFill" class="meter-fill"></div></div>
+        </div>
+        <div class="panel-block">
+          <h2>Loot Bag</h2>
+          <div class="inventory-grid">
+            <div class="inventory-card"><span>Moon Keys</span><strong id="keyLabel">0</strong></div>
+            <div class="inventory-card"><span>Chests</span><strong id="chestLabel">0</strong></div>
+            <div class="inventory-card"><span>Relics</span><strong id="relicLabel">0</strong></div>
+            <div class="inventory-card"><span>Dream Gems</span><strong id="gemLabel">0</strong></div>
+            <div class="inventory-card"><span>Satchels</span><strong id="satchelLabel">0</strong></div>
+            <div class="inventory-card"><span>Shield</span><strong id="shieldLabel">0</strong></div>
+          </div>
+        </div>
+        <div class="panel-block">
+          <h2>Dream Mission</h2>
+          <p id="missionTitle" class="mission-title">—</p>
+          <p id="message" class="message">—</p>
+        </div>
+        <div class="panel-block">
+          <h2>Star Map</h2>
+          <canvas id="minimap" width="220" height="220" aria-label="Minimap"></canvas>
+        </div>
+        <div class="panel-block">
+          <h2>Quest Log</h2>
+          <ul class="quest-list">
+            <li id="questStars" class="quest-item">Collect all badge stars.</li>
+            <li id="questDoor" class="quest-item">Charge the gate.</li>
+            <li id="questClear" class="quest-item">Escape with a strong score.</li>
+          </ul>
+        </div>
+        <a class="primary panel-button" href="./play.html" style="display:block;text-align:center;text-decoration:none">Back to Play</a>
+      </section>
+    </main>
+    <script src="./js/site-nav.js"></script>
+    <script src="./js/app-stubs.js"></script>
+    <script src="./app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+    <meta name="theme-color" content="#140b27">
+    <title>Store — Muffin's Maze Adventure</title>
+    <link rel="stylesheet" href="./styles.css">
+  </head>
+  <body data-page="store">
+    <main class="experience-shell">
+      <section class="page-panel glass store-page side-panel" style="max-width:800px;margin:0 auto">
+        <div id="storeModal">
+          <div class="modal-card store-modal-card">
+            <p class="eyebrow">Dream Store</p>
+            <h2>Upgrade Muffin's Run</h2>
+            <p class="modal-copy">Spend dream coins on permanent upgrades for every maze run.</p>
+            <div class="store-wallet">
+              <span>Wallet</span>
+              <strong id="storeWalletLabel">0 coins</strong>
+            </div>
+            <div id="storeGrid" class="store-grid"></div>
+            <p class="tiny-note">Coins: <strong id="storeCoinsLabel">0</strong></p>
+            <div id="storePreview" class="store-preview-list"></div>
+            <a class="primary panel-button" href="./play.html" style="display:block;text-align:center;text-decoration:none;margin-top:14px">Back to Play</a>
+          </div>
+        </div>
+      </section>
+    </main>
+    <script src="./js/site-nav.js"></script>
+    <script src="./js/app-stubs.js"></script>
+    <script src="./app.js"></script>
+  </body>
+</html>

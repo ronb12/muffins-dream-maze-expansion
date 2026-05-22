@@ -1,0 +1,8 @@
+.DS_Store
+.derivedData/
+.tmp/
+audio/staging/*.wav
+garageband-api/workspace/
+__pycache__/
+*.pyc
+.vercel

@@ -1,0 +1,21 @@
+{
+  "id": "sfx-star",
+  "title": "Star Collect",
+  "bpm": 120,
+  "bars": 1,
+  "mood": "sparkle",
+  "outputFilename": "sfx-star.mp3",
+  "garageBandHints": {
+    "tempo": 120,
+    "suggestedInstruments": [
+      "Dreamy Pad",
+      "Bell",
+      "Soft Piano",
+      "Electric Bass"
+    ],
+    "program": 81
+  },
+  "midiPath": "/Volumes/My Passport for Mac/Macintosh-SSD-Offload/Documents-Codex/2026-05-09/i-have-my-google-sheet-open/prototypes-today/muffins-dream-maze-expansion/audio/staging/sfx-star.mid",
+  "midiRelative": "audio/staging/sfx-star.mid",
+  "noteCount": 4
+}

@@ -1,0 +1,60 @@
+{
+  "version": 1,
+  "presets": [
+    {
+      "id": "music-garden",
+      "description": "Purple moon garden — worlds 1–33",
+      "export_as": "music-garden.mp3",
+      "tempo": 84,
+      "mode": "minor",
+      "root_midi": 57,
+      "bars": 16,
+      "include_bells": true,
+      "arp_scale": [0, 3, 7, 10, 12, 10, 7, 3]
+    },
+    {
+      "id": "music-nebula",
+      "description": "Cool nebula halls — worlds 34–66",
+      "export_as": "music-nebula.mp3",
+      "tempo": 90,
+      "mode": "minor",
+      "root_midi": 50,
+      "bars": 16,
+      "include_bells": false,
+      "arp_scale": [0, 5, 7, 10, 12, 10, 7, 5]
+    },
+    {
+      "id": "music-atmosphere",
+      "description": "Deep dream atmosphere — worlds 67–100",
+      "export_as": "music-atmosphere.mp3",
+      "tempo": 78,
+      "mode": "minor",
+      "root_midi": 45,
+      "bars": 20,
+      "include_bells": true,
+      "arp_scale": [0, 3, 5, 7, 10, 7, 5, 3]
+    },
+    {
+      "id": "music-victory",
+      "description": "Level clear sting (short)",
+      "export_as": "music-victory.mp3",
+      "tempo": 100,
+      "mode": "major",
+      "root_midi": 64,
+      "bars": 4,
+      "include_bells": true,
+      "arp_scale": [0, 4, 7, 11, 12, 11, 7, 4]
+    },
+    {
+      "id": "sfx-star",
+      "description": "Badge star sparkle — import as short region",
+      "export_as": "sfx-star.mp3",
+      "tempo": 120,
+      "mode": "major",
+      "root_midi": 76,
+      "bars": 1,
+      "include_bells": true,
+      "arp_scale": [0, 4, 7, 12]
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+    <meta name="theme-color" content="#140b27">
+    <title>Story — Muffin's Maze Adventure</title>
+    <link rel="stylesheet" href="./styles.css">
+  </head>
+  <body data-page="story">
+    <main class="experience-shell">
+      <section class="page-panel glass side-panel" style="max-width:720px;margin:0 auto">
+        <p class="eyebrow">Story Mode</p>
+        <h2 id="storyChapterLabel">Chapter 1</h2>
+        <p id="storyProgressLabel" class="tiny-note">Chapter 1 of 10</p>
+        <p id="storySummary" class="message">—</p>
+        <div id="storyBeatList" class="story-beat-list"></div>
+        <button id="openStoryPanelBtn" class="secondary panel-button">Refresh Journal</button>
+        <a class="ghost panel-button" href="./play.html" style="display:block;text-align:center;text-decoration:none">Continue in Play</a>
+      </section>
+    </main>
+
+    <div id="storyModal" class="level-modal hidden" aria-hidden="true">
+      <div class="modal-card story-modal-card">
+        <div class="story-modal-header">
+          <div>
+            <p id="storyModalEyebrow" class="eyebrow">Story Journal</p>
+            <h2 id="storyModalTitle">—</h2>
+          </div>
+          <button id="closeStoryBtn" class="ghost">Close</button>
+        </div>
+        <p id="storyModalBody" class="modal-copy">—</p>
+        <div class="story-journal-grid">
+          <div class="story-journal-card"><span>Goal</span><strong id="storyModalGoal">—</strong></div>
+          <div class="story-journal-card"><span>Progress</span><strong id="storyModalProgress">—</strong></div>
+        </div>
+        <a id="storyModalContinueBtn" class="primary" href="./play.html" style="display:block;text-align:center;text-decoration:none">Back To Play</a>
+      </div>
+    </div>
+
+    <script src="./js/site-nav.js"></script>
+    <script src="./js/app-stubs.js"></script>
+    <script src="./app.js"></script>
+    <script src="./js/game-plus.js"></script>
+  </body>
+</html>
