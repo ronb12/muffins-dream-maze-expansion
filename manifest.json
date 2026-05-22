@@ -2,7 +2,7 @@
   "name": "Muffin's Maze Adventure",
   "short_name": "Dream Maze",
   "description": "First-person dream maze with Muffin — 100 surreal worlds.",
-  "start_url": "./play.html",
+  "start_url": "./index.html",
   "display": "standalone",
   "background_color": "#140b27",
   "theme_color": "#140b27",

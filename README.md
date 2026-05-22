@@ -35,7 +35,7 @@ Open [http://127.0.0.1:9876/](http://127.0.0.1:9876/) (use your LAN IP on a phon
 | **GitHub `main`** | `ronb12/muffins-dream-maze-expansion` — multi-page HTML on `main` |
 | **Vercel project** | `muffins-dream-maze-expansion` (linked via `.vercel/project.json`) |
 | **Production** | https://muffins-dream-maze-expansion.vercel.app |
-| **Neon Postgres** | **Not used** — static client game; saves in `localStorage` only. No `DATABASE_URL` on Vercel. |
+| **Neon Postgres** | **Not linked** — no Neon project named for this game; no `DATABASE_URL` on Vercel. Progress saves in browser `localStorage` only. |
 
 Redeploy from this folder:
 
