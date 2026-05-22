@@ -3,7 +3,8 @@
 First-person dream maze — 100 worlds, story chapters, dream store, touch controls, PWA install.
 
 **Live (Vercel):** https://muffins-dream-maze-expansion.vercel.app  
-**Repo:** https://github.com/ronb12/muffins-dream-maze-expansion
+**Repo:** https://github.com/ronb12/muffins-dream-maze-expansion  
+**GitHub `main`:** multi-page site (`index`, `play`, `console`, `worlds`, `story`, `store`, `settings`)
 
 ## Pages (multi-page site)
 

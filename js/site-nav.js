@@ -32,4 +32,8 @@
   const shell = document.querySelector(".experience-shell");
   if (shell) shell.prepend(nav);
   else document.body.insertBefore(nav, document.body.firstChild);
+
+  if ("serviceWorker" in navigator) {
+    navigator.serviceWorker.register("./sw.js").catch(() => {});
+  }
 })();
