@@ -2,17 +2,22 @@
 
 First-person dream maze — 100 worlds, story chapters, dream store, touch controls, PWA install.
 
+**Live (Vercel):** https://muffins-dream-maze-expansion.vercel.app  
+**Repo:** https://github.com/ronb12/muffins-dream-maze-expansion
+
 ## Pages (multi-page site)
 
-| Page | URL |
-|------|-----|
-| Home hub | `index.html` |
-| Play maze | `play.html` |
-| Dream console | `console.html` |
-| World atlas | `worlds.html` |
-| Story journal | `story.html` |
-| Dream store | `store.html` |
-| Settings | `settings.html` |
+| Page | Local | Production |
+|------|-------|------------|
+| Home hub | `index.html` | [/](https://muffins-dream-maze-expansion.vercel.app/) |
+| Play maze | `play.html` | [/play](https://muffins-dream-maze-expansion.vercel.app/play) |
+| Dream console | `console.html` | [/console](https://muffins-dream-maze-expansion.vercel.app/console) |
+| World atlas | `worlds.html` | [/worlds](https://muffins-dream-maze-expansion.vercel.app/worlds) |
+| Story journal | `story.html` | [/story](https://muffins-dream-maze-expansion.vercel.app/story) |
+| Dream store | `store.html` | [/store](https://muffins-dream-maze-expansion.vercel.app/store) |
+| Settings | `settings.html` | [/settings](https://muffins-dream-maze-expansion.vercel.app/settings) |
+
+Shared top nav: `js/site-nav.js` on every page. Game logic runs on all pages via `app.js` + hidden stubs (`js/app-stubs.js`); only **Play** runs the 3D loop.
 
 ## Run locally
 
@@ -24,15 +29,20 @@ Open [http://127.0.0.1:9876/](http://127.0.0.1:9876/) (use your LAN IP on a phon
 
 ## Deploy (Vercel)
 
-Static site — no server runtime. From this folder:
+| Check | Status |
+|-------|--------|
+| **GitHub `main`** | `ronb12/muffins-dream-maze-expansion` — multi-page HTML on `main` |
+| **Vercel project** | `muffins-dream-maze-expansion` (linked via `.vercel/project.json`) |
+| **Production** | https://muffins-dream-maze-expansion.vercel.app |
+| **Neon Postgres** | **Not used** — static client game; saves in `localStorage` only. No `DATABASE_URL` on Vercel. |
+
+Redeploy from this folder:
 
 ```bash
 npx vercel --prod
 ```
 
-Or link the repo in the Vercel dashboard with **Output Directory** = `.` (project root).
-
-**Neon:** This game is client-only (localStorage). It does **not** use Neon Postgres unless you add a backend later.
+`vercel.json` sets `cleanUrls: true` so `/play` serves `play.html`.
 
 ## Music (GarageBand → original soundtrack)
 
